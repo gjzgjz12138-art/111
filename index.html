@@ -1,0 +1,1477 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>斑斓舍 | 婚礼案例</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap");
+
+      :root {
+        --ivory: #fffdf9;
+        --cream: #f5efe7;
+        --champagne: #d8c3a5;
+        --champagne-deep: #b6976b;
+        --ink: #2b2621;
+        --muted: #7c6f61;
+        --gold-glow: rgba(182, 151, 107, 0.2);
+        --shadow-soft: 0 18px 45px rgba(52, 43, 34, 0.12);
+        --shadow-deep: 0 28px 70px rgba(52, 43, 34, 0.18);
+        --radius-lg: 26px;
+        --radius-md: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Manrope", "Microsoft YaHei", "PingFang SC", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 15% 0%, #ffffff 0%, var(--ivory) 35%, transparent 55%),
+          radial-gradient(circle at 85% 8%, #ffffff 0%, var(--cream) 40%, transparent 60%),
+          linear-gradient(180deg, #ffffff 0%, var(--cream) 100%);
+        min-height: 100vh;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        max-width: 1220px;
+        margin: 0 auto;
+        padding: 34px 26px 60px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding-bottom: 30px;
+      }
+
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .logo {
+        font-family: "Cormorant Garamond", "Manrope", sans-serif;
+        font-size: clamp(28px, 4vw, 40px);
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      .tagline {
+        font-size: 13px;
+        letter-spacing: 0.35em;
+        color: var(--muted);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 13px;
+        letter-spacing: 0.22em;
+        color: var(--muted);
+      }
+
+      .nav a {
+        padding-bottom: 4px;
+        border-bottom: 1px solid transparent;
+        transition: color 0.2s ease, border-color 0.2s ease;
+      }
+
+      .nav a:hover {
+        color: var(--champagne-deep);
+        border-color: var(--champagne-deep);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 40px;
+        align-items: center;
+        padding: 20px 0 50px;
+      }
+
+      .hero-copy h1 {
+        font-family: "Cormorant Garamond", "Manrope", sans-serif;
+        font-size: clamp(34px, 5vw, 52px);
+        margin: 0 0 16px;
+        letter-spacing: 0.12em;
+      }
+
+      .hero-copy p {
+        color: var(--muted);
+        line-height: 1.8;
+        margin: 0 0 26px;
+        max-width: 520px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .btn {
+        border-radius: 999px;
+        padding: 10px 22px;
+        border: 1px solid rgba(182, 151, 107, 0.45);
+        background: transparent;
+        color: var(--ink);
+        font-size: 12px;
+        letter-spacing: 0.22em;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .btn.primary {
+        background: linear-gradient(135deg, rgba(216, 195, 165, 0.35), rgba(255, 255, 255, 0.8));
+        box-shadow: 0 10px 30px var(--gold-glow);
+      }
+
+      .btn:hover {
+        border-color: var(--champagne-deep);
+        color: var(--champagne-deep);
+      }
+
+      .hero-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .hero-image {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-soft);
+        position: relative;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .hero-image.tall {
+        grid-row: span 2;
+        min-height: 320px;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 26px;
+      }
+
+      .section-title h2 {
+        font-family: "Cormorant Garamond", "Manrope", sans-serif;
+        font-size: clamp(26px, 4vw, 36px);
+        margin: 0;
+        letter-spacing: 0.14em;
+      }
+
+      .section-title span {
+        color: var(--muted);
+        font-size: 13px;
+        letter-spacing: 0.3em;
+      }
+
+      .cases-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .filter-chip {
+        padding: 8px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(182, 151, 107, 0.35);
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .filter-chip.active {
+        background: rgba(216, 195, 165, 0.35);
+        color: var(--ink);
+        border-color: var(--champagne-deep);
+      }
+
+      .cases-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 26px;
+      }
+
+      .case-card {
+        background: var(--ivory);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-soft);
+        cursor: pointer;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        position: relative;
+      }
+
+      .case-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-deep);
+      }
+
+      .case-media {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        position: relative;
+        background: #efe7dd;
+      }
+
+      .case-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.35s ease;
+      }
+
+      .case-card:hover .case-media img {
+        transform: scale(1.04);
+      }
+
+      .case-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: flex-end;
+        padding: 16px;
+        background: linear-gradient(transparent 45%, rgba(18, 14, 10, 0.42));
+        color: #fff;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+      }
+
+      .case-card:hover .case-overlay {
+        opacity: 1;
+      }
+
+      .case-date {
+        background: rgba(255, 255, 255, 0.18);
+        padding: 6px 12px;
+        border-radius: 999px;
+      }
+
+      .case-meta {
+        padding: 16px 18px 20px;
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+        text-transform: uppercase;
+      }
+
+      .style-tabs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .tab-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .tab-btn {
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(182, 151, 107, 0.35);
+        border-radius: 16px;
+        padding: 14px 16px;
+        font-size: 12px;
+        letter-spacing: 0.2em;
+        text-align: left;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .tab-btn.active {
+        border-color: var(--champagne-deep);
+        background: rgba(216, 195, 165, 0.3);
+        color: var(--ink);
+      }
+
+      .tab-panel {
+        background: var(--ivory);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .tab-panel h3 {
+        margin: 0 0 12px;
+        font-family: "Cormorant Garamond", "Manrope", sans-serif;
+        letter-spacing: 0.2em;
+      }
+
+      .tab-panel p {
+        margin: 0 0 18px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .tab-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .tab-gallery img {
+        width: 100%;
+        border-radius: 14px;
+        object-fit: cover;
+      }
+
+      .process {
+        display: grid;
+        gap: 16px;
+      }
+
+      .accordion-item {
+        background: var(--ivory);
+        border-radius: 16px;
+        box-shadow: var(--shadow-soft);
+        overflow: hidden;
+      }
+
+      .accordion-header {
+        padding: 16px 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 13px;
+        letter-spacing: 0.18em;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+        padding: 0 20px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .accordion-item.active .accordion-content {
+        padding: 0 20px 18px;
+        max-height: 180px;
+      }
+
+      .packages {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+      }
+
+      .package-card {
+        background: var(--ivory);
+        border-radius: var(--radius-lg);
+        padding: 22px;
+        box-shadow: var(--shadow-soft);
+        border: 1px solid transparent;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+
+      .package-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(182, 151, 107, 0.4);
+      }
+
+      .package-card h4 {
+        margin: 0 0 10px;
+        letter-spacing: 0.2em;
+      }
+
+      .package-card p {
+        margin: 0 0 14px;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 13px;
+      }
+
+      .package-price {
+        font-size: 18px;
+        letter-spacing: 0.12em;
+        color: var(--champagne-deep);
+      }
+
+      .testimonial {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
+
+      .testimonial-card {
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: var(--radius-md);
+        padding: 20px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .testimonial-card span {
+        display: block;
+        margin-top: 12px;
+        color: var(--champagne-deep);
+        letter-spacing: 0.14em;
+        font-size: 12px;
+      }
+
+      .booking {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 26px;
+        align-items: center;
+      }
+
+      .booking-form {
+        background: var(--ivory);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .booking-form label {
+        font-size: 12px;
+        letter-spacing: 0.2em;
+        color: var(--muted);
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .booking-form input,
+      .booking-form select,
+      .booking-form textarea {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid rgba(182, 151, 107, 0.3);
+        padding: 10px 12px;
+        margin-bottom: 14px;
+        font-family: inherit;
+      }
+
+      .booking-form textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+
+      footer {
+        padding-top: 30px;
+        border-top: 1px solid rgba(182, 151, 107, 0.28);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .contact-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .contact-item svg {
+        width: 18px;
+        height: 18px;
+        color: var(--champagne-deep);
+      }
+
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(16, 12, 8, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        z-index: 20;
+      }
+
+      .modal.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .modal-content {
+        width: min(1020px, 96vw);
+        background: var(--ivory);
+        border-radius: 26px;
+        overflow: hidden;
+        box-shadow: 0 30px 80px rgba(20, 16, 12, 0.28);
+        position: relative;
+      }
+
+      .modal-image {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: #efe7dd;
+      }
+
+      .modal-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .modal-meta {
+        padding: 16px 24px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 13px;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+      }
+
+      .modal-actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.9);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(20, 16, 12, 0.2);
+      }
+
+      .nav-prev {
+        left: 16px;
+      }
+
+      .nav-next {
+        right: 16px;
+      }
+
+      .nav-btn svg {
+        width: 18px;
+        height: 18px;
+        color: var(--champagne-deep);
+      }
+
+      .terminal-toggle {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 30;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: rgba(36, 30, 24, 0.9);
+        color: #fff;
+        letter-spacing: 0.2em;
+        font-size: 12px;
+        cursor: pointer;
+        box-shadow: 0 12px 30px rgba(20, 16, 12, 0.25);
+      }
+
+      .terminal-panel {
+        position: fixed;
+        right: 24px;
+        bottom: 80px;
+        width: min(420px, 92vw);
+        max-height: 78vh;
+        background: #11100e;
+        color: #f3e9da;
+        border-radius: 18px;
+        box-shadow: 0 24px 60px rgba(10, 8, 6, 0.45);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+        transition: all 0.25s ease;
+        z-index: 29;
+      }
+
+      .terminal-panel.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .terminal-header {
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 12px;
+        letter-spacing: 0.18em;
+      }
+
+      .terminal-body {
+        padding: 16px 18px;
+        display: grid;
+        gap: 16px;
+        overflow: auto;
+      }
+
+      .terminal-quick {
+        display: grid;
+        gap: 10px;
+      }
+
+      .terminal-field label {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 6px;
+      }
+
+      .terminal-field input,
+      .terminal-field textarea {
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.04);
+        color: #f3e9da;
+        padding: 8px 10px;
+        font-family: inherit;
+        font-size: 13px;
+      }
+
+      .terminal-field textarea {
+        min-height: 72px;
+        resize: vertical;
+      }
+
+      .terminal-actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      .terminal-actions button {
+        flex: 1;
+        border-radius: 999px;
+        border: 1px solid rgba(216, 195, 165, 0.5);
+        background: transparent;
+        color: #f3e9da;
+        padding: 8px 0;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        cursor: pointer;
+      }
+
+      .terminal-actions button.primary {
+        background: rgba(216, 195, 165, 0.18);
+      }
+
+      .terminal-output {
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 12px;
+        padding: 10px 12px;
+        font-size: 12px;
+        line-height: 1.6;
+        max-height: 180px;
+        overflow: auto;
+        white-space: pre-line;
+      }
+
+      .terminal-command {
+        display: grid;
+        gap: 8px;
+      }
+
+      .terminal-command input {
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(0, 0, 0, 0.2);
+        color: #f3e9da;
+        padding: 9px 10px;
+        font-family: "Manrope", "Microsoft YaHei", "PingFang SC", sans-serif;
+        font-size: 12px;
+      }
+
+      .terminal-hint {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.55);
+        letter-spacing: 0.12em;
+      }
+
+      @media (max-width: 860px) {
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .nav {
+          flex-wrap: wrap;
+          row-gap: 10px;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .page {
+          padding: 28px 18px 50px;
+        }
+
+        .hero-gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-image.tall {
+          grid-row: auto;
+        }
+
+        .modal-meta {
+          flex-direction: column;
+          gap: 12px;
+          align-items: flex-start;
+        }
+
+        .nav-btn {
+          width: 36px;
+          height: 36px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo" id="brandName">斑斓舍</div>
+          <div class="tagline" id="brandTagline">定格每一场浪漫</div>
+        </div>
+        <nav class="nav">
+          <a href="#cases">案例</a>
+          <a href="#styles">风格</a>
+          <a href="#process">流程</a>
+          <a href="#packages">套餐</a>
+          <a href="#booking">预约</a>
+        </nav>
+      </header>
+
+      <section class="hero" id="hero">
+        <div class="hero-copy">
+          <h1 id="heroTitle">以光影与质感，书写婚礼的高级诗意</h1>
+          <p id="heroDesc">
+            斑斓舍专注于高端婚礼空间与影像呈现，低饱和色彩、细腻质地与克制的华丽并存。
+            我们用更少的文字，呈现更丰盛的视觉感受。
+          </p>
+          <div class="hero-actions">
+            <button class="btn primary" id="viewCasesBtn">浏览案例</button>
+            <button class="btn" id="bookNowBtn">立即预约</button>
+          </div>
+        </div>
+        <div class="hero-gallery">
+          <div class="hero-image tall">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=80" alt="婚礼现场" />
+          </div>
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1400&q=80" alt="婚礼花艺" />
+          </div>
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1400&q=80" alt="婚礼细节" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="cases">
+        <div class="section-title">
+          <h2>婚礼案例</h2>
+          <span>WEDDING CASES</span>
+        </div>
+        <div class="cases-filters" id="casesFilters"></div>
+        <div class="cases-grid" id="casesGrid"></div>
+      </section>
+
+      <section class="section" id="styles">
+        <div class="section-title">
+          <h2>风格档案</h2>
+          <span>STYLE ARCHIVE</span>
+        </div>
+        <div class="style-tabs">
+          <div class="tab-list" id="styleTabs">
+            <button class="tab-btn active" data-tab="forest">森系光影</button>
+            <button class="tab-btn" data-tab="minimal">极简皓白</button>
+            <button class="tab-btn" data-tab="crystal">水晶轻奢</button>
+            <button class="tab-btn" data-tab="chinese">新中式</button>
+          </div>
+          <div class="tab-panel" id="tabPanel">
+            <h3>森系光影</h3>
+            <p>自然植被与轻雾光线交叠，营造安静而浪漫的氛围，适合草坪与庭院场地。</p>
+            <div class="tab-gallery">
+              <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80" alt="森系婚礼" />
+              <img src="https://images.unsplash.com/photo-1482482097755-0b595893ba63?auto=format&fit=crop&w=900&q=80" alt="森系婚礼细节" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="process">
+        <div class="section-title">
+          <h2>服务流程</h2>
+          <span>OUR PROCESS</span>
+        </div>
+        <div class="process" id="processList">
+          <div class="accordion-item active">
+            <div class="accordion-header">01 需求访谈与风格确认</div>
+            <div class="accordion-content">
+              了解新人故事、预算与场地，定义色彩与空间基调，建立专属视觉方向。
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">02 空间设计与花艺方案</div>
+            <div class="accordion-content">
+              输出动线、舞台、主桌与花艺方案，确保现场呈现的层次与质感。
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">03 细节统筹与落地执行</div>
+            <div class="accordion-content">
+              统筹灯光、道具、布置与摄影团队，保证整场婚礼的高级一致性。
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="packages">
+        <div class="section-title">
+          <h2>经典套餐</h2>
+          <span>SIGNATURE SETS</span>
+        </div>
+        <div class="packages">
+          <div class="package-card">
+            <h4>轻奢仪式</h4>
+            <p>适合精致小型婚礼，强调花艺质感与光影氛围。</p>
+            <div class="package-price">¥ 48,000 起</div>
+          </div>
+          <div class="package-card">
+            <h4>全景定制</h4>
+            <p>完整视觉规划与现场统筹，适合草坪或城堡场地。</p>
+            <div class="package-price">¥ 88,000 起</div>
+          </div>
+          <div class="package-card">
+            <h4>臻选典藏</h4>
+            <p>顶级材质与多场景设计，婚礼全程高端呈现。</p>
+            <div class="package-price">¥ 128,000 起</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="testimonials">
+        <div class="section-title">
+          <h2>新人私语</h2>
+          <span>LOVE NOTES</span>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-card">
+            “整体氛围特别高级，现场灯光和花艺细节完全超出期待。”
+            <span>Y & L / 2024.11</span>
+          </div>
+          <div class="testimonial-card">
+            “从第一次沟通到落地执行都很专业，整个空间像一场艺术展。”
+            <span>M & Z / 2024.06</span>
+          </div>
+          <div class="testimonial-card">
+            “我们最喜欢的是克制的浪漫感，照片太美了。”
+            <span>J & Q / 2023.12</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="booking">
+        <div class="section-title">
+          <h2>预约咨询</h2>
+          <span>BOOKING</span>
+        </div>
+        <div class="booking">
+          <div>
+            <p>
+              留下日期与需求，我们将在 24 小时内与您联系。可先填写基本信息，后续再完善细节。
+            </p>
+            <p>服务城市：上海 / 杭州 / 苏州 / 南京</p>
+          </div>
+          <form class="booking-form">
+            <label>称呼</label>
+            <input type="text" placeholder="例如：林小姐" />
+            <label>联系电话</label>
+            <input type="text" placeholder="例如：13800000000" />
+            <label>婚礼日期</label>
+            <input type="text" placeholder="例如：2025.10.01" />
+            <label>预算范围</label>
+            <select>
+              <option>¥ 30,000 - 60,000</option>
+              <option>¥ 60,000 - 100,000</option>
+              <option>¥ 100,000 以上</option>
+            </select>
+            <label>偏好风格</label>
+            <textarea placeholder="例如：森系、极简、淡香槟配色"></textarea>
+            <button class="btn primary" type="button">提交预约</button>
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M6.6 3.5h2.3c.5 0 .9.4 1 .8l.5 2.7c.1.4-.1.8-.4 1l-1.3 1c-.2.2-.3.4-.2.6.8 2.1 2.5 3.9 4.7 4.8.2.1.5 0 .6-.2l1-1.3c.3-.3.7-.5 1.1-.4l2.6.5c.5.1.8.5.8 1v2.3c0 .6-.4 1-1 1C9.1 18.3 5.7 14.9 5.7 5.6c0-.6.4-1 1-1z"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span id="contactPhone">电话 138-0000-0000</span>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M7.5 9.2c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5c0 2.3-1.7 4.1-3.9 4.4-.1.6-.3 1.3-.6 1.8.7.1 1.3.2 2 .2 2.8 0 5-1.5 5-3.3 0-1.4-1.2-2.6-3-3.1.2-.6.3-1.3.3-2 0-3.1-2.8-5.7-6.3-5.7S5.7 4.1 5.7 7.2c0 1.2.4 2.3 1.1 3.2-1.8.4-3.1 1.7-3.1 3.2 0 1.9 2.3 3.3 5.1 3.3.7 0 1.3-.1 1.9-.2-.4-.6-.7-1.2-.8-1.8-2.3-.2-4-2.1-4-4.5z"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span id="contactWeChat">微信 banlanshe_wedding</span>
+        </div>
+      </footer>
+    </div>
+
+    <div class="terminal-toggle" id="terminalToggle">终端面板</div>
+    <aside class="terminal-panel" id="terminalPanel">
+      <div class="terminal-header">
+        <span>素材与文字控制台</span>
+        <button class="btn" id="terminalClose" type="button">关闭</button>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-quick">
+          <div class="terminal-field">
+            <label>品牌名称</label>
+            <input type="text" id="inputBrand" placeholder="例如：斑斓舍" />
+          </div>
+          <div class="terminal-field">
+            <label>品牌标语</label>
+            <input type="text" id="inputTagline" placeholder="例如：定格每一场浪漫" />
+          </div>
+          <div class="terminal-field">
+            <label>主标题</label>
+            <input type="text" id="inputHeroTitle" placeholder="例如：以光影与质感，书写婚礼的高级诗意" />
+          </div>
+          <div class="terminal-field">
+            <label>主文案</label>
+            <textarea id="inputHeroDesc" placeholder="填写首页主文案"></textarea>
+          </div>
+          <div class="terminal-field">
+            <label>联系电话</label>
+            <input type="text" id="inputPhone" placeholder="例如：电话 138-0000-0000" />
+          </div>
+          <div class="terminal-field">
+            <label>微信</label>
+            <input type="text" id="inputWeChat" placeholder="例如：微信 banlanshe_wedding" />
+          </div>
+          <div class="terminal-actions">
+            <button class="primary" id="applyQuick" type="button">一键应用</button>
+            <button id="fillCurrent" type="button">读取当前</button>
+          </div>
+        </div>
+
+        <div class="terminal-command">
+          <div class="terminal-hint">命令示例：help / set brand 斑斓舍 / add case 2025.12.30|图片URL|16/9|城堡,香槟金</div>
+          <input id="terminalInput" type="text" placeholder="输入命令后回车" />
+          <div class="terminal-output" id="terminalOutput">欢迎使用终端面板。输入 help 查看指令。</div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true">
+        <button class="nav-btn nav-prev" id="prevBtn" aria-label="上一张">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <button class="nav-btn nav-next" id="nextBtn" aria-label="下一张">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="modal-image">
+          <img id="modalImage" src="" alt="" />
+        </div>
+        <div class="modal-meta">
+          <div id="modalDate">2025.05.20</div>
+          <div class="modal-actions">
+            <button class="btn" id="closeBtn">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const casesGrid = document.getElementById("casesGrid");
+      const casesFilters = document.getElementById("casesFilters");
+      const modal = document.getElementById("modal");
+      const modalImage = document.getElementById("modalImage");
+      const modalDate = document.getElementById("modalDate");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const closeBtn = document.getElementById("closeBtn");
+      const viewCasesBtn = document.getElementById("viewCasesBtn");
+      const bookNowBtn = document.getElementById("bookNowBtn");
+      const brandNameEl = document.getElementById("brandName");
+      const brandTaglineEl = document.getElementById("brandTagline");
+      const heroTitleEl = document.getElementById("heroTitle");
+      const heroDescEl = document.getElementById("heroDesc");
+      const phoneEl = document.getElementById("contactPhone");
+      const wechatEl = document.getElementById("contactWeChat");
+      const terminalToggle = document.getElementById("terminalToggle");
+      const terminalPanel = document.getElementById("terminalPanel");
+      const terminalClose = document.getElementById("terminalClose");
+      const terminalInput = document.getElementById("terminalInput");
+      const terminalOutput = document.getElementById("terminalOutput");
+      const applyQuick = document.getElementById("applyQuick");
+      const fillCurrent = document.getElementById("fillCurrent");
+      const inputBrand = document.getElementById("inputBrand");
+      const inputTagline = document.getElementById("inputTagline");
+      const inputHeroTitle = document.getElementById("inputHeroTitle");
+      const inputHeroDesc = document.getElementById("inputHeroDesc");
+      const inputPhone = document.getElementById("inputPhone");
+      const inputWeChat = document.getElementById("inputWeChat");
+
+      // === 案例数据录入区域：只需替换日期与图片路径即可 ===
+      let caseData = [
+        { date: "2025.05.20", image: "https://images.unsplash.com/photo-1521038199265-bc482db0f0c4?auto=format&fit=crop&w=1600&q=80", ratio: "16/9", tags: ["城堡", "香槟金"] },
+        { date: "2024.11.08", image: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1600&q=80", ratio: "4/3", tags: ["草坪", "森系"] },
+        { date: "2024.06.18", image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80", ratio: "16/9", tags: ["室内", "极简"] },
+        { date: "2023.12.30", image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=80", ratio: "16/9", tags: ["海岛", "光影"] },
+        { date: "2023.05.09", image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1600&q=80", ratio: "4/3", tags: ["庭院", "花艺"] }
+      ];
+
+      let sortedCases = [];
+      let allTags = [];
+      let filters = [];
+      let activeFilter = "全部";
+
+      function rebuildData() {
+        sortedCases = [...caseData].sort((a, b) => {
+          const da = new Date(a.date.replaceAll(".", "-"));
+          const db = new Date(b.date.replaceAll(".", "-"));
+          return db - da;
+        });
+        allTags = Array.from(new Set(sortedCases.flatMap((item) => item.tags || [])));
+        filters = ["全部", ...allTags];
+        if (!filters.includes(activeFilter)) {
+          activeFilter = "全部";
+        }
+      }
+
+      function renderFilters() {
+        casesFilters.innerHTML = "";
+        filters.forEach((tag) => {
+          const chip = document.createElement("button");
+          chip.className = "filter-chip";
+          if (tag === activeFilter) chip.classList.add("active");
+          chip.textContent = tag;
+          chip.type = "button";
+          chip.addEventListener("click", () => {
+            activeFilter = tag;
+            renderFilters();
+            renderCases();
+          });
+          casesFilters.appendChild(chip);
+        });
+      }
+
+      function renderCases() {
+        casesGrid.innerHTML = "";
+        const filtered = sortedCases.filter((item) =>
+          activeFilter === "全部" ? true : (item.tags || []).includes(activeFilter)
+        );
+        filtered.forEach((item, index) => {
+          const card = document.createElement("article");
+          card.className = "case-card";
+          card.dataset.index = index;
+
+          const media = document.createElement("div");
+          media.className = "case-media";
+          if (item.ratio) {
+            media.style.aspectRatio = item.ratio;
+          }
+
+          const img = document.createElement("img");
+          img.src = item.image;
+          img.alt = `婚礼案例 ${item.date}`;
+
+          const overlay = document.createElement("div");
+          overlay.className = "case-overlay";
+
+          const dateTag = document.createElement("div");
+          dateTag.className = "case-date";
+          dateTag.textContent = item.date;
+
+          overlay.appendChild(dateTag);
+          media.appendChild(img);
+          media.appendChild(overlay);
+
+          const meta = document.createElement("div");
+          meta.className = "case-meta";
+          meta.textContent = item.tags ? item.tags.join(" / ") : "Wedding Case";
+
+          card.appendChild(media);
+          card.appendChild(meta);
+
+          card.addEventListener("click", () => openModal(filtered.indexOf(item), filtered));
+
+          casesGrid.appendChild(card);
+        });
+      }
+
+      let currentIndex = 0;
+      let currentList = sortedCases;
+
+      function openModal(index, list = sortedCases) {
+        currentIndex = index;
+        currentList = list;
+        updateModal();
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+      }
+
+      function closeModal() {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+      }
+
+      function updateModal() {
+        const item = currentList[currentIndex];
+        if (!item) return;
+        modalImage.src = item.image;
+        modalImage.alt = `婚礼案例 ${item.date}`;
+        modalDate.textContent = item.date;
+      }
+
+      function showPrev() {
+        currentIndex = (currentIndex - 1 + currentList.length) % currentList.length;
+        updateModal();
+      }
+
+      function showNext() {
+        currentIndex = (currentIndex + 1) % currentList.length;
+        updateModal();
+      }
+
+      prevBtn.addEventListener("click", showPrev);
+      nextBtn.addEventListener("click", showNext);
+      closeBtn.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      window.addEventListener("keydown", (event) => {
+        if (!modal.classList.contains("active")) return;
+        if (event.key === "Escape") closeModal();
+        if (event.key === "ArrowLeft") showPrev();
+        if (event.key === "ArrowRight") showNext();
+      });
+
+      const tabPanel = document.getElementById("tabPanel");
+      const tabButtons = Array.from(document.querySelectorAll(".tab-btn"));
+      const tabData = {
+        forest: {
+          title: "森系光影",
+          desc: "自然植被与轻雾光线交叠，营造安静而浪漫的氛围，适合草坪与庭院场地。",
+          images: [
+            "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80",
+            "https://images.unsplash.com/photo-1482482097755-0b595893ba63?auto=format&fit=crop&w=900&q=80"
+          ]
+        },
+        minimal: {
+          title: "极简皓白",
+          desc: "以白色与香槟金为基调，强调空间留白与结构线条，适合酒店与室内场地。",
+          images: [
+            "https://images.unsplash.com/photo-1521038199265-bc482db0f0c4?auto=format&fit=crop&w=900&q=80",
+            "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80"
+          ]
+        },
+        crystal: {
+          title: "水晶轻奢",
+          desc: "水晶、金属与透明材质叠加，质感通透而华丽，适合高级宴会厅。",
+          images: [
+            "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80",
+            "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=900&q=80"
+          ]
+        },
+        chinese: {
+          title: "新中式",
+          desc: "东方韵味与现代材质结合，低饱和红与香槟金细节点缀。",
+          images: [
+            "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=900&q=80",
+            "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80"
+          ]
+        }
+      };
+
+      tabButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          tabButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const key = btn.dataset.tab;
+          const data = tabData[key];
+          if (!data) return;
+          tabPanel.innerHTML = `
+            <h3>${data.title}</h3>
+            <p>${data.desc}</p>
+            <div class="tab-gallery">
+              <img src="${data.images[0]}" alt="${data.title}" />
+              <img src="${data.images[1]}" alt="${data.title}" />
+            </div>
+          `;
+        });
+      });
+
+      const accordionItems = Array.from(document.querySelectorAll(".accordion-item"));
+      accordionItems.forEach((item) => {
+        const header = item.querySelector(".accordion-header");
+        header.addEventListener("click", () => {
+          accordionItems.forEach((acc) => acc.classList.remove("active"));
+          item.classList.add("active");
+        });
+      });
+
+      viewCasesBtn.addEventListener("click", () => {
+        document.getElementById("cases").scrollIntoView({ behavior: "smooth" });
+      });
+
+      bookNowBtn.addEventListener("click", () => {
+        document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
+      });
+
+      function logTerminal(message) {
+        const time = new Date().toLocaleTimeString("zh-CN", { hour: "2-digit", minute: "2-digit" });
+        terminalOutput.textContent = `[${time}] ${message}\n${terminalOutput.textContent}`.slice(0, 2000);
+      }
+
+      function setText(el, value) {
+        if (!el || !value) return;
+        el.textContent = value;
+      }
+
+      function fillQuickInputs() {
+        inputBrand.value = brandNameEl.textContent.trim();
+        inputTagline.value = brandTaglineEl.textContent.trim();
+        inputHeroTitle.value = heroTitleEl.textContent.trim();
+        inputHeroDesc.value = heroDescEl.textContent.trim();
+        inputPhone.value = phoneEl.textContent.trim();
+        inputWeChat.value = wechatEl.textContent.trim();
+      }
+
+      function applyQuickInputs() {
+        setText(brandNameEl, inputBrand.value);
+        setText(brandTaglineEl, inputTagline.value);
+        setText(heroTitleEl, inputHeroTitle.value);
+        setText(heroDescEl, inputHeroDesc.value);
+        setText(phoneEl, inputPhone.value);
+        setText(wechatEl, inputWeChat.value);
+        logTerminal("已应用快速编辑内容。");
+      }
+
+      function parseCasePayload(payload) {
+        const [date, image, ratio, tags] = payload.split("|").map((item) => item.trim());
+        if (!date || !image) return null;
+        const entry = {
+          date,
+          image,
+          ratio: ratio || "16/9",
+          tags: tags ? tags.split(",").map((tag) => tag.trim()).filter(Boolean) : []
+        };
+        return entry;
+      }
+
+      function handleCommand(raw) {
+        const input = raw.trim();
+        if (!input) return;
+        const parts = input.split(" ");
+        const command = parts[0].toLowerCase();
+
+        if (command === "help") {
+          logTerminal(
+            "可用命令：\n" +
+              "help\n" +
+              "set brand <文本>\n" +
+              "set tagline <文本>\n" +
+              "set heroTitle <文本>\n" +
+              "set heroDesc <文本>\n" +
+              "set phone <文本>\n" +
+              "set wechat <文本>\n" +
+              "add case <日期>|<图片URL>|<比例>|<标签1,标签2>\n" +
+              "set case <序号> <日期>|<图片URL>|<比例>|<标签>\n" +
+              "remove case <序号>\n" +
+              "list cases"
+          );
+          return;
+        }
+
+        if (command === "add" && parts[1] === "case") {
+          const payload = parts.slice(2).join(" ");
+          const entry = parseCasePayload(payload);
+          if (!entry) {
+            logTerminal("格式错误：add case 日期|图片URL|比例|标签");
+            return;
+          }
+          caseData.push(entry);
+          rebuildData();
+          renderFilters();
+          renderCases();
+          logTerminal(`已新增案例 ${entry.date}。`);
+          return;
+        }
+
+        if (command === "set" && parts[1] === "case") {
+          const index = parseInt(parts[2], 10);
+          const payload = parts.slice(3).join(" ");
+          const entry = parseCasePayload(payload);
+          if (Number.isNaN(index) || !entry) {
+            logTerminal("格式错误：set case 序号 日期|图片URL|比例|标签");
+            return;
+          }
+          const targetIndex = sortedCases[index] ? caseData.indexOf(sortedCases[index]) : -1;
+          if (targetIndex < 0) {
+            logTerminal("未找到该序号的案例。");
+            return;
+          }
+          caseData[targetIndex] = entry;
+          rebuildData();
+          renderFilters();
+          renderCases();
+          logTerminal(`已更新案例 ${index}。`);
+          return;
+        }
+
+        if (command === "set" && parts[1]) {
+          const key = parts[1];
+          const value = parts.slice(2).join(" ");
+          if (!value) {
+            logTerminal("未提供内容。");
+            return;
+          }
+          const setters = {
+            brand: () => setText(brandNameEl, value),
+            tagline: () => setText(brandTaglineEl, value),
+            heroTitle: () => setText(heroTitleEl, value),
+            heroDesc: () => setText(heroDescEl, value),
+            phone: () => setText(phoneEl, value),
+            wechat: () => setText(wechatEl, value)
+          };
+          if (!setters[key]) {
+            logTerminal("未知字段，请输入 help 查看。");
+            return;
+          }
+          setters[key]();
+          logTerminal(`已更新 ${key}。`);
+          return;
+        }
+
+        if (command === "remove" && parts[1] === "case") {
+          const index = parseInt(parts[2], 10);
+          if (Number.isNaN(index) || !sortedCases[index]) {
+            logTerminal("未找到该序号的案例。");
+            return;
+          }
+          const targetIndex = caseData.indexOf(sortedCases[index]);
+          caseData.splice(targetIndex, 1);
+          rebuildData();
+          renderFilters();
+          renderCases();
+          logTerminal(`已删除案例 ${index}。`);
+          return;
+        }
+
+        if (command === "list" && parts[1] === "cases") {
+          const lines = sortedCases.map((item, idx) => `${idx}. ${item.date} | ${item.tags?.join(",") || ""}`);
+          logTerminal(lines.join("\n"));
+          return;
+        }
+
+        logTerminal("未识别的命令，输入 help 查看。");
+      }
+
+      terminalToggle.addEventListener("click", () => {
+        terminalPanel.classList.add("active");
+        fillQuickInputs();
+        terminalInput.focus();
+      });
+
+      terminalClose.addEventListener("click", () => {
+        terminalPanel.classList.remove("active");
+      });
+
+      applyQuick.addEventListener("click", applyQuickInputs);
+      fillCurrent.addEventListener("click", () => {
+        fillQuickInputs();
+        logTerminal("已读取当前页面内容。");
+      });
+
+      terminalInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          handleCommand(terminalInput.value);
+          terminalInput.value = "";
+        }
+      });
+
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && terminalPanel.classList.contains("active")) {
+          terminalPanel.classList.remove("active");
+        }
+      });
+
+      rebuildData();
+      renderFilters();
+      renderCases();
+    </script>
+  </body>
+</html>
