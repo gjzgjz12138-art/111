@@ -1,0 +1,450 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>目的地婚礼 · 浪漫华章</title>
+<style>
+:root{
+  --champagne:#e8d6b3;
+  --blush:#f6c9d3;
+  --ivory:#fdf8f0;
+  --lavender:#d9c7e6;
+  --rose:#f4b7c1;
+  --gold:#c9a36a;
+  --text:#3b2f2a;
+  --deep:#2a1c1a;
+  --shadow:0 20px 50px rgba(90,52,28,.18);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"Playfair Display","Noto Serif SC","Songti SC",serif;
+  color:var(--text);
+  background:radial-gradient(1200px 600px at 10% -10%, rgba(244,183,193,.5), transparent 60%),
+             radial-gradient(1200px 800px at 90% -20%, rgba(217,199,230,.6), transparent 60%),
+             linear-gradient(135deg, #fffaf4 0%, #fff2f7 35%, #f7f0ff 70%, #fffaf4 100%);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+@font-face{
+  font-family:"Noto Serif SC";
+  font-style:normal;
+  font-weight:400;
+  src:local("Noto Serif SC");
+}
+header{
+  position:relative;
+  padding:120px 8vw 90px;
+  text-align:center;
+  color:#f8f2ea;
+}
+.hero-title{
+  font-family:"Great Vibes","Times New Roman",cursive;
+  font-size:64px;
+  letter-spacing:2px;
+  color:#fff7ef;
+  margin:0 0 12px;
+}
+.hero-sub{
+  font-size:20px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#f3d9c8;
+}
+.hero-desc{
+  margin:26px auto 0;
+  max-width:780px;
+  font-size:18px;
+  line-height:1.9;
+  color:#f0e2d8;
+}
+.hero-cta{
+  margin-top:34px;
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding:14px 28px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.35);
+  background:linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.05));
+  box-shadow:var(--shadow);
+  color:#fff4ec;
+  text-decoration:none;
+  font-weight:600;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:
+    linear-gradient(120deg, rgba(40,20,30,.65), rgba(120,80,110,.45)),
+    url("https://images.unsplash.com/photo-1769050351358-41f4cc3b53a3?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=2400");
+  background-size:cover;
+  background-position:center;
+  filter:contrast(1.05) saturate(1.1);
+}
+.hero-glow{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:radial-gradient(600px 200px at 50% 20%, rgba(255,233,214,.55), transparent 70%),
+             radial-gradient(800px 320px at 10% 10%, rgba(244,183,193,.4), transparent 70%);
+}
+.section{
+  padding:80px 8vw;
+}
+.section-title{
+  font-size:34px;
+  letter-spacing:1px;
+  margin:0 0 18px;
+  color:var(--deep);
+}
+.section-sub{
+  margin:0 0 40px;
+  color:#7a5a4e;
+  font-size:16px;
+}
+.grid{
+  display:grid;
+  gap:26px;
+}
+.grid-2{grid-template-columns:repeat(auto-fit, minmax(260px,1fr));}
+.grid-3{grid-template-columns:repeat(auto-fit, minmax(240px,1fr));}
+.card, .price-card{ text-decoration:none; color:inherit; display:block; }
+.card{
+  background:rgba(255,255,255,.75);
+  border:1px solid rgba(201,163,106,.2);
+  border-radius:24px;
+  padding:26px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(10px);
+  transition:transform .6s ease, box-shadow .6s ease;
+}
+.card:hover{transform:translateY(-6px); box-shadow:0 30px 60px rgba(90,52,28,.22);}
+.card-media{
+  width:100%;
+  height:160px;
+  border-radius:16px;
+  margin-bottom:16px;
+  background-size:cover;
+  background-position:center;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);
+}
+.card h3{margin:0 0 12px; font-size:22px; color:#4a2f27;}
+.card p{margin:0; line-height:1.8; color:#6c534a; font-size:15px;}
+.tag{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:999px;
+  background:linear-gradient(135deg, rgba(233,216,179,.6), rgba(246,201,211,.6));
+  font-size:12px;
+  color:#6b4d3f;
+  letter-spacing:1px;
+}
+.ribbon{
+  position:absolute;
+  inset:auto 0 0;
+  height:140px;
+  background:linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.75) 55%, rgba(255,255,255,.95) 100%);
+  pointer-events:none;
+}
+.timeline{
+  display:grid;
+  gap:18px;
+}
+.timeline-item{
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+}
+.timeline-bullet{
+  width:12px; height:12px; border-radius:50%;
+  background:linear-gradient(135deg, var(--gold), var(--rose));
+  box-shadow:0 0 12px rgba(201,163,106,.8);
+  margin-top:8px;
+}
+.price-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:22px;
+}
+.price-card{
+  border-radius:24px;
+  padding:26px;
+  background:linear-gradient(160deg, rgba(255,255,255,.92), rgba(255,255,255,.6));
+  border:1px solid rgba(217,199,230,.45);
+  box-shadow:var(--shadow);
+}
+.media-row{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:20px;
+  align-items:center;
+}
+.media-img{
+  width:100%;
+  height:200px;
+  border-radius:18px;
+  background-size:cover;
+  background-position:center;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(201,163,106,.2);
+}
+.price-card h4{margin:0 0 10px; font-size:20px; color:#4a2f27;}
+.price{
+  font-size:30px;
+  color:#9a6a3c;
+  margin:6px 0 12px;
+  font-weight:700;
+}
+.price-card ul{
+  margin:0; padding:0; list-style:none; color:#6b5349; line-height:1.7; font-size:14px;
+}
+.badge{
+  font-size:12px; color:#8a6a5d; border:1px solid rgba(201,163,106,.4); padding:2px 8px; border-radius:999px; display:inline-block;
+}
+.quote{
+  padding:30px;
+  border-left:3px solid var(--gold);
+  background:rgba(255,255,255,.6);
+  border-radius:20px;
+  font-size:16px;
+  line-height:1.9;
+  color:#6b5349;
+}
+footer{
+  text-align:center;
+  padding:60px 8vw 80px;
+  color:#7a5a4e;
+}
+/* Floating petals */
+.petal{
+  position:fixed;
+  top:-10vh;
+  width:18px; height:18px;
+  background:radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,0)),
+             radial-gradient(circle at 70% 70%, rgba(244,183,193,.8), rgba(244,183,193,.2));
+  border-radius:50% 60% 50% 60%;
+  opacity:.7;
+  pointer-events:none;
+  animation:fall linear infinite;
+  filter:blur(.2px);
+}
+@keyframes fall{
+  0%{transform:translate3d(var(--x), -10vh, 0) rotate(0deg);}
+  100%{transform:translate3d(calc(var(--x) + var(--drift)), 110vh, 0) rotate(320deg);}
+}
+.reveal{opacity:0; transform:translateY(24px); transition:all .9s ease;}
+.reveal.visible{opacity:1; transform:translateY(0);}
+@media (max-width:700px){
+  .hero-title{font-size:46px;}
+  .section{padding:60px 7vw;}
+  .price{font-size:26px;}
+  .media-row{grid-template-columns:1fr;}
+  .media-img{height:180px;}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="tag">目的地婚礼 · 分析报告</div>
+  <h1 class="hero-title">Romantic Destination Wedding</h1>
+  <div class="hero-sub">以光影为誓 · 以风景为证</div>
+  <p class="hero-desc">
+    基于《目的地婚礼分析报告》所呈现的目的地、套餐与服务流程，我们将数据化内容转化为一场更具仪式感的叙事：
+    在雪山与海风之间，为你们定制一场温柔、华丽且私密的婚礼旅程。
+  </p>
+  <a class="hero-cta" href="pages/report.html">开启浪漫之旅</a>
+  <div class="ribbon"></div>
+</header>
+
+<section id="destinations" class="section reveal">
+  <h2 class="section-title">目的地灵感</h2>
+  <p class="section-sub">报告中重点提及的四大核心目的地，诠释不同气质的婚礼仪式。</p>
+  <div class="grid grid-2">
+    <a class="card" href="pages/xinjiang.html">
+      <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1769540209459-ae620b0390ce?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=2000')"></div>
+      <span class="badge">新疆</span>
+      <h3>辽阔与纯净的誓言</h3>
+      <p>以辽阔风景烘托仪式感，婚礼与旅拍融合，形成「仪式 + 旅拍」的浪漫组合。</p>\n    </a>
+    <a class="card" href="pages/chuanxi.html">
+      <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1524107853022-4f238e34ed8d?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=2000')"></div>
+      <span class="badge">川西 · 新都桥</span>
+      <h3>高原光影里的誓约</h3>
+      <p>成都出发、新都桥拍摄的路线清晰可循，行程包含试纱、沟通与整日拍摄，节奏从容。</p>\n    </a>
+    <a class="card" href="pages/lijiang.html">
+      <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1733691217961-14e808e67a65?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=2000')"></div>
+      <span class="badge">丽江</span>
+      <h3>古城风与雪山语</h3>
+      <p>多档位覆盖2天1晚至4天3晚，强调婚礼纪实与旅行电影双线呈现。</p>\n    </a>
+    <a class="card" href="pages/qingdao.html">
+      <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1768488292726-9c850289925a?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=2000')"></div>
+      <span class="badge">青岛 · 石老人高尔夫</span>
+      <h3>海风与草坪的承诺</h3>
+      <p>石老人高尔夫草坪、崂山与鲍鱼岛等场地在报告中被重点提及，契合高端海岛风格。</p>\n    </a>
+  </div>
+</section>
+
+<section class="section reveal">
+  <h2 class="section-title">参考套餐档位</h2>
+  <p class="section-sub">结合报告中的价格区间与服务内容，整理出更具仪式感的表达方式。</p>
+  <div class="price-grid">
+    <a class="price-card" href="pages/report.html">
+      <h4>轻奢旅拍（川西参考）</h4>
+      <div class="price">¥8,799</div>
+      <ul>
+        <li>1天1晚 · 约190张底片 · 精修约45张</li>
+        <li>航拍微电影 1-2 分钟</li>
+        <li>相册 2 本（约14英寸）</li>
+        <li>摆台 2 个 + 婚礼海报 1 张</li>
+      </ul>\n    </a>
+    <a class="price-card" href="pages/report.html">
+      <h4>经典仪式（新疆参考）</h4>
+      <div class="price">¥19,999</div>
+      <ul>
+        <li>3天2晚 · 3套造型 · 精修约40张</li>
+        <li>婚礼纪录片 6-10 分钟</li>
+        <li>婚礼相册 1 本（约18英寸）</li>
+        <li>摆台 2 个 + 海报 1 张</li>
+      </ul>\n    </a>
+    <a class="price-card" href="pages/report.html">
+      <h4>浪漫升级（丽江参考）</h4>
+      <div class="price">¥20,999</div>
+      <ul>
+        <li>3天2晚 · 4套造型 · 精修约40张</li>
+        <li>婚礼纪录 + 旅行电影 2-3 分钟</li>
+        <li>30秒预告短视频 + 15秒请柬</li>
+        <li>加送相框/海报等成品制作</li>
+      </ul>\n    </a>
+    <a class="price-card" href="pages/report.html">
+      <h4>海岛臻享（青岛参考）</h4>
+      <div class="price">¥22,888</div>
+      <ul>
+        <li>4天3晚 · 精修约50张</li>
+        <li>迎宾海报 + 12寸相册</li>
+        <li>婚礼纪录 5-8 分钟 + 30秒预告</li>
+        <li>双机位覆盖，草坪专属场地</li>
+      </ul>\n    </a>
+  </div>
+</section>
+
+<section class="section reveal">
+  <h2 class="section-title">仪式流程</h2>
+  <p class="section-sub">报告中多次提及的标准流程，被我们重新整理成更有温度的叙事。</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-bullet"></div>
+      <div>
+        <div class="media-row">
+          <div>
+            <h3>Day 1 · 初见与定调</h3>
+            <p>接机与入住，试纱、选装、路线沟通，让每一处细节都以你们的风格为中心。</p>
+          </div>
+          <div class="media-img" style="background-image:url('https://images.unsplash.com/photo-1769050351358-41f4cc3b53a3?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800')"></div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-bullet"></div>
+      <div>
+        <div class="media-row">
+          <div>
+            <h3>Day 2 · 仪式与旅拍</h3>
+            <p>仪式与旅拍并行，镜头记录誓言与风景交融的那一刻。</p>
+          </div>
+          <div class="media-img" style="background-image:url('https://images.unsplash.com/photo-1733691217961-14e808e67a65?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800')"></div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-bullet"></div>
+      <div>
+        <div class="media-row">
+          <div>
+            <h3>Day 3 · 选片与回望</h3>
+            <p>门店选片或线上选片，成品邮寄到家，将浪漫落成真实可触的回忆。</p>
+          </div>
+          <div class="media-img" style="background-image:url('https://images.unsplash.com/photo-1768488292726-9c850289925a?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800')"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal">
+  <h2 class="section-title">共性承诺</h2>
+  <p class="section-sub">根据报告总结的共通服务内容，提炼为婚礼承诺。</p>
+  <div class="quote">
+    多拍多送、精修不限次；恶劣天气免费改期；核心流程围绕化妆与拍摄展开；
+    多数品牌拥有独家婚礼场地，并提供完整的影像交付与礼品制作。
+  </div>
+</section>
+
+<section class="section reveal">
+  <h2 class="section-title">差异化价值</h2>
+  <p class="section-sub">报告中的差异化切入点，被我们转译成更具情感的品牌语言。</p>
+  <div class="grid grid-3">
+    <a class="card" href="pages/report.html">
+      <h3>本土化沉浸体验</h3>
+      <p>路线与风景不只是背景，而是与你们故事紧密相连的旅程。</p>
+    </div>
+    <a class="card" href="pages/report.html">
+      <h3>全流程服务</h3>
+      <p>从接机、酒店到父母服装的细节照顾，让爱更完整。</p>
+    </div>
+    <a class="card" href="pages/report.html">
+      <h3>高端赠礼与抵扣</h3>
+      <p>本地餐饮抵扣与酒店券，让浪漫不止于镜头。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="reveal">
+  <div class="tag">愿每一次出发，都有爱相伴</div>
+  <p style="margin-top:18px;">从雪山到海风，从草坪到古城，我们把报告中的理性数据，化作你们的浪漫婚礼蓝图。</p>
+</footer>
+
+<script>
+// reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); } });
+}, {threshold:0.15});
+reveals.forEach(r => io.observe(r));
+
+// floating petals
+const petalCount = 22;
+for(let i=0;i<petalCount;i++){
+  const p = document.createElement('div');
+  p.className = 'petal';
+  const size = 10 + Math.random()*16;
+  const x = Math.random()*100;
+  const drift = (Math.random()*40 - 20);
+  const duration = 16 + Math.random()*18;
+  const delay = Math.random()*-20;
+  p.style.width = size+'px';
+  p.style.height = size+'px';
+  p.style.setProperty('--x', x+'vw');
+  p.style.setProperty('--drift', drift+'vw');
+  p.style.animationDuration = duration+'s';
+  p.style.animationDelay = delay+'s';
+  document.body.appendChild(p);
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
